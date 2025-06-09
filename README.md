@@ -40,7 +40,7 @@ A clean, interactive, and responsive **To-Do List App** built with **HTML**, **C
 
 1. **Download or Clone the Project**
    ```bash
-     git clone https://github.com/your-username/todo-list-app.git
+     git clone https://github.com/Jiyapatel2107/To-Do-List-App.git
      cd todo-list-app
    ```
 2. **Open the App**
