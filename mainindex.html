@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive To-Do List</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <!-- Link to CSS -->
+    <link rel="stylesheet" href="mainstyle.css">
+</head>
+<body>
+    <div id="theme-switcher">
+        <button data-theme="default" class="theme-btn active" aria-label="Default Theme"></button>
+        <button data-theme="forest" class="theme-btn " aria-label="forest Theme"></button>
+        <button data-theme="sunset" class="theme-btn" aria-label="Sunset Theme"></button>
+        <button data-theme="oceanic" class="theme-btn" aria-label="Oceanic Theme"></button>
+    </div>
+
+    <div class="app-container">
+        <div class="header">
+            <h1>My To-Do List</h1>
+            <p id="date"></p>
+        </div>
+        
+        <!-- Input form for new tasks with priority dropdown -->
+        <form id="taskForm">
+            <input type="text" id="taskInput" placeholder="Add a new task..." aria-label="New task input">
+            <select id="prioritySelect" aria-label="Priority">
+                <option value="low">Low</option>
+                <option value="medium" selected>Medium</option>
+                <option value="high">High</option>
+            </select>
+            <input type="date" id="dueDateInput" aria-label="Due date">
+            <button type="submit" aria-label="Add task"><i class="fas fa-plus"></i></button>
+        </form>
+        
+        <!-- Container for messages like validation errors -->
+        <div id="message-container" class="message-container"></div>
+
+        <!-- The list where tasks will be displayed -->
+        <ul id="taskList">
+            <!-- Tasks are dynamically inserted here -->
+        </ul>
+    </div>
+
+    <!-- Modal for editing tasks (initially hidden) -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Edit Task</h2>
+            <input type="text" id="editInput" aria-label="Edit task input">
+            <input type="date" id="editDateInput" aria-label="Edit Due date">
+            <button id="saveEditButton">Save Changes</button>
+        </div>
+    </div>
+
+    <!-- Link to JavaScript -->
+    <script src="mainscript.js"></script>
+</body>
+</html>
